@@ -1,0 +1,22 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+
+<section class="text-center container">
+  <h2>Student Dictionary</h2>
+  <p>Enter any word to get the Meaning,Synonyms and Antonyms for the word</p>
+  <div>
+    <form action="" method="post">
+      {% csrf_token %} {{form}}
+
+      <input class="btn btn-danger" type="submit" value="Submit" />
+    </form>
+    <br />
+  </div>
+  <div>
+    <h2 align="center">{{ results.word | title }}</h2>
+    <br />
+    <p><b>Meaning: </b>{{results.meaning}}</p>
+    <br />
+  </div>
+</section>
+
+{% endblock %}
